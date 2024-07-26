@@ -1,0 +1,27 @@
+/*
+Problem 4 
+Author: Silly Sushi
+*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    float sum=0;
+
+    do{
+        cin>>n;
+        if(n<1){
+            cout << "Enter again.\n";
+        }
+    }while(n<1);
+
+    for(int i=1; i<=n; i++){
+        sum = sum + 1.0/(2*i);
+    }
+
+    cout << sum;
+
+    return 0;
+}
