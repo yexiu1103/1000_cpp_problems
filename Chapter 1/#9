@@ -1,0 +1,24 @@
+/*Problem 9
+Author: Silly Sushi
+*/
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    long result=1;
+
+    do{
+        cin>>n;
+        if(n<1){
+            cout<<"Enter again.\n";
+        }
+    }while(n<1);
+
+    for(int i=1; i<=n; i++){
+        result*=i;
+    }
+
+    cout<<result;
+
+    return 0;
+}
