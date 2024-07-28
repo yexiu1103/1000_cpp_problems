@@ -1,0 +1,24 @@
+/* Problem 11
+Author:  Silly Sushi
+Current mood: I'm hungry. I miss mom's cooking
+*/
+#include<iostream>
+using namespace std;
+
+long factorial(int n){
+    long fac = 1;
+    for(int i=1; i<=n; i++){
+        fac*=i;
+    }
+    return fac;
+}
+int main(){
+    int n;
+    cin>>n;
+    long total=0;
+    for(int i=1; i<=n; i++){
+        total+=factorial(i);
+    }
+    cout<<total;
+    return 0;
+}
