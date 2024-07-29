@@ -1,0 +1,24 @@
+/*
+Problem 14
+Author: Silly Sushi
+Current mood: I'm changing a few details
+*/
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+long power(int x, int j){
+    return pow(x, 2*j+1);
+}
+int main(){
+    int x;
+    int n;
+    cin >> x;
+    cin >> n;
+    long total = 0;
+    for(int i=1; i<=n; i++){
+        total+=power(x,i);
+    }
+    cout << total;
+    return 0;
+}
