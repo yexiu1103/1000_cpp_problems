@@ -1,17 +1,14 @@
 /*
 Problem 13
 Author: Silly Sushi
-Current mood: Hehe copying
+Current mood: It's raining
 */
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 long power(int x, int j){
-    long result = 1;
-    for(int i=1; i<=j; i++){
-        result*=(x*x);
-    }
-    return result;
+    return pow(x, 2*j);
 }
 int main(){
     int x;
@@ -20,7 +17,7 @@ int main(){
     cin >> n;
     long total = 0;
     for(int i=1; i<=n; i++){
-        total+=power(i,n);
+        total+=power(x,i);
     }
     cout << total;
     return 0;
