@@ -1,0 +1,27 @@
+/*
+Problem 13
+Author: Silly Sushi
+Current mood: Hehe copying
+*/
+#include<iostream>
+using namespace std;
+
+long power(int x, int j){
+    long result = 1;
+    for(int i=1; i<=j; i++){
+        result*=(x*x);
+    }
+    return result;
+}
+int main(){
+    int x;
+    int n;
+    cin >> x;
+    cin >> n;
+    long total = 0;
+    for(int i=1; i<=n; i++){
+        total+=power(i,n);
+    }
+    cout << total;
+    return 0;
+}
