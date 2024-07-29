@@ -1,0 +1,35 @@
+/*Problem 16
+Author: Silly Sushi
+*/
+#include<iostream>
+using namespace std;
+
+long power(int x, int n){
+    long power=1;
+    for(int i=1; i<=n; i++){
+        power*=x;
+    }
+    return power;
+    }
+
+long total(int j){
+    long total=0;
+    for(int i=1; i<=j; i++){
+        total+=i;
+    }
+    return total;
+    }
+int main(){
+    int x,n;
+    cin >> x >> n;
+    float result=0;
+
+    for(int i=1; i<=n; i++){
+        result+=static_cast<float>(power(x,i))/total(i);
+    }
+
+    cout<<result;
+
+    return 0;
+
+}
