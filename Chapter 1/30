@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra số hoàn thiện
+bool isPerfectNumber(int n) {
+    if (n <= 1)
+        return false;
+        
+    int sum = 1; // Tổng của các ước số nhỏ hơn n
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            if (i * i != n) {
+                sum += i + n / i;
+            } else {
+                sum += i;
+            }
+        }
+    }
+    
+    // Nếu tổng các ước bằng chính nó, thì là số hoàn thiện
+    return sum == n;
+}
+
+int main() {
+    int num;
+    cout << "Nhập vào số cần kiểm tra: ";
+    cin >> num;
+
+    if (isPerfectNumber(num)) {
+        cout << num << " là số hoàn thiện." << endl;
+    } else {
+        cout << num << " không phải là số hoàn thiện." << endl;
+    }
+
+    return 0;
+}
