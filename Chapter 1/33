@@ -3,9 +3,9 @@
 using namespace std;
 
 double square_root(int n){
-    double result=n;
+    double result;
     for (int i=1; i<=n; i++){
-        result = sqrt(result);
+        result = sqrt(2);
     }
     return result;
 }
@@ -15,7 +15,6 @@ int main()
     int n;
     cin >> n;
 
-    
     std::cout<<square_root(n);
 
     return 0;
