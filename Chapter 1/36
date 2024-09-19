@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int i, n;
+    float S, M;
+
+    do {
+        std::cout << "\nNhap n(n >= 1): ";
+        std::cin >> n;
+
+        if (n < 1) {
+            std::cout << "\nn phai >= 1. Xin nhap lai !";
+        }
+    } while (n < 1);
+
+    i = 1;
+    M = 1;
+    S = sqrt(0.0f);  // No need to cast to float here in C++
+
+    while (i <= n) {
+        M = M * i;
+        S = sqrt(M + S);
+        i++;
+    }
+
+    std::cout << "\nTong la " << S << std::endl;
+
+    return 0;
+}
