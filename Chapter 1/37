@@ -18,7 +18,7 @@ int main() {
     S = pow(2.0, 1.0 / 2);
 
     while (i <= n) {
-        S = pow((i + S) * 1.0, 1.0 / i);
+        S = pow((i + S), 1.0 / i);
         i++;
     }
 
