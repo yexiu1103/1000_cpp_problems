@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath> // Thư viện để dùng hàm sqrt
+
+using namespace std;
+
+// Hàm kiểm tra số chính phương
+bool isPerfectSquare(int n) {
+    if (n < 0)
+        return false; // Số âm không thể là số chính phương
+    
+    int sqrtN = sqrt(n); // Tính căn bậc hai của n
+    return (sqrtN * sqrtN == n); // Kiểm tra nếu bình phương của căn bậc hai bằng n
+}
+
+int main() {
+    int num;
+    cout << "Nhập vào số cần kiểm tra: ";
+    cin >> num;
+
+    if (isPerfectSquare(num)) {
+        cout << num << " là số chính phương." << endl;
+    } else {
+        cout << num << " không phải là số chính phương." << endl;
+    }
+
+    return 0;
+}
