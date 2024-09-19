@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int i, n;
+    float S;
+
+    do {
+        std::cout << "\nNhap n(n >= 2): ";
+        std::cin >> n;
+
+        if (n < 2) {
+            std::cout << "\nn phai >= 2. Xin nhap lai !";
+        }
+    } while (n < 2);
+
+    i = 3;
+    S = pow(2.0, 1.0 / 2);
+
+    while (i <= n) {
+        S = pow((i + S) * 1.0, 1.0 / i);
+        i++;
+    }
+
+    std::cout << "\nTong la " << S << std::endl;
+
+    return 0;
+}
