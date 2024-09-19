@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double square_root(int n){
+    double result=n;
+    for (int i=1; i<=n; i++){
+        result = sqrt(result);
+    }
+    return result;
+}
+int main()
+{
+    
+    int n;
+    cin >> n;
+
+    
+    std::cout<<square_root(n);
+
+    return 0;
+}
