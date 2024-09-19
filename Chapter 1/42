@@ -1,0 +1,29 @@
+#include <iostream>
+
+int main() {
+    int i, n;
+    float S;
+
+    i = 0;
+    S = 0;
+
+    // Input validation for n
+    do {
+        std::cout << "\nNhap n: ";
+        std::cin >> n;
+
+        if (n < 0) {
+            std::cout << "Error: (n >= 0)\n";
+        }
+    } while (n < 0);
+
+    // Calculate the maximum k where S(k) < n
+    while (S + i < n) {
+        i++;
+        S += i;  // Equivalent to S = S + i
+    }
+
+    std::cout << "\nGia tri k lon nhat de S(k) = 1 + 2 + ... + k < n la " << i << std::endl;
+
+    return 0;
+}
