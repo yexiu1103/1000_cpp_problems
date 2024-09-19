@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int i, n;
+    float S;
+    
+    do {
+        std::cout << "\nNhap n(n >= 1): ";
+        std::cin >> n;
+
+        if (n < 1) {
+            std::cout << "\nn phai >= 1. Xin nhap lai !";
+        }
+    } while (n < 1);
+
+    i = 1;
+    S = n;
+
+    while (i <= n) {
+        S = sqrt(n-i);
+        i++;
+    }
+    
+    std::cout << "\nTong S = " << S << std::endl;
+
+    return 0;
+}
