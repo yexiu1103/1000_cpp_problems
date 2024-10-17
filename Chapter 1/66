@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath> // Thư viện cho pow()
+using namespace std;
+
+// Hàm tính S(x, n)
+double S(double x, int n) {
+    double sum = 0;
+    for (int k = 1; k <= n; k++) {
+        sum += pow(-1, k + 1) * pow(x, k); // Tính từng hạng tử
+    }
+    return sum;
+}
+
+int main() {
+    double x;
+    int n;
+
+    cout << "Nhap gia tri x: ";
+    cin >> x;
+    cout << "Nhap gia tri n: ";
+    cin >> n;
+
+    // Tính S(x, n)
+    double result = S(x, n);
+
+    cout << "S(" << x << ", " << n << ") = " << result << endl;
+
+    return 0;
+}
