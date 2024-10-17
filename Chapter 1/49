@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tìm chữ số đầu tiên của một số tự nhiên
+int chuSoDauTien(unsigned long long n) {
+    while (n >= 10) {
+        n /= 10; // Chia n cho 10 cho đến khi n còn lại là chữ số đầu tiên
+    }
+    return n; // Trả về chữ số đầu tiên
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm chuSoDauTien
+    int chuSoDau = chuSoDauTien(n);
+
+    cout << "Chu so dau tien cua n la: " << chuSoDau << endl;
+
+    return 0;
+}
