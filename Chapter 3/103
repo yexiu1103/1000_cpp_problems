@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day, month, year;
+    cout << "Nhap ngay: ";
+    cin >> day;
+    cout << "Nhap thang: ";
+    cin >> month;
+    cout << "Nhap nam: ";
+    cin >> year;
+
+    // Xác định số ngày trong tháng
+    int days;
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            days = 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            days = 30;
+            break;
+        case 2:
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                days = 29; // Năm nhuận
+            } else {
+                days = 28; // Năm không nhuận
+            }
+            break;
+        default:
+            cout << "Thang khong hop le!" << endl;
+            return 0;
+    }
+
+    // Tìm ngày trước đó
+    day--;
+    if (day < 1) {
+        month--;
+        if (month < 1) {
+            month = 12;
+            year--;
+        }
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                day = 31;
+                break;
+            case 4: case 6: case 9: case 11:
+                day = 30;
+                break;
+            case 2:
+                if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                    day = 29; // Năm nhuận
+                } else {
+                    day = 28; // Năm không nhuận
+                }
+                break;
+        }
+    }
+
+    cout << "Ngay truoc do: " << day << "/" << month << "/" << year << endl;
+    return 0;
+}
