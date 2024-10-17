@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a, b, c;
+
+    // Nhập 3 cạnh của tam giác
+    cout << "Nhap canh a: ";
+    cin >> a;
+    cout << "Nhap canh b: ";
+    cin >> b;
+    cout << "Nhap canh c: ";
+    cin >> c;
+
+    // Kiểm tra điều kiện tam giác
+    if (a + b > c && a + c > b && b + c > a) {
+        // Xác định loại tam giác
+        if (a == b && b == c) {
+            cout << "Day la tam giac deu." << endl;
+        } else if (a == b || a == c || b == c) {
+            cout << "Day la tam giac can." << endl;
+        } else {
+            cout << "Day la tam giac thuong." << endl;
+        }
+    } else {
+        cout << "3 canh khong tao thanh mot tam giac." << endl;
+    }
+
+    return 0;
+}
