@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra số nguyên tố
+bool isPrime(int n) {
+    if (n <= 1) return false; // Số nguyên tố phải lớn hơn 1
+    for (int i = 2; i * i <= n; i++) { // Chỉ kiểm tra đến căn bậc hai của n
+        if (n % i == 0) return false; // Nếu n chia hết cho i, n không phải là số nguyên tố
+    }
+    return true; // Nếu không tìm thấy ước số nào, n là số nguyên tố
+}
+
+int main() {
+    int n;
+    cout << "Nhap so nguyen duong n: ";
+    cin >> n;
+
+    if (isPrime(n)) {
+        cout << n << " la so nguyen to." << endl;
+    } else {
+        cout << n << " khong phai la so nguyen to." << endl;
+    }
+
+    return 0;
+}
