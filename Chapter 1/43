@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// Hàm đếm số chữ số của một số tự nhiên
+int demChuSo(unsigned long long n) {
+    int count = 0;
+    if (n == 0) {
+        return 1; // Nếu n = 0, số chữ số là 1
+    }
+    while (n > 0) {
+        n /= 10; // Chia n cho 10 để loại bỏ chữ số cuối cùng
+        count++;
+    }
+    return count;
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm demChuSo
+    int soChuSo = demChuSo(n);
+
+    cout << "So chu so cua n la: " << soChuSo << endl;
+
+    return 0;
+}
