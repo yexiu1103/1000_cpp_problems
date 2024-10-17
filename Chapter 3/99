@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a, b, c;
+    float temp1, temp2; // Các biến phụ
+
+    // Nhập vào 3 số thực
+    cout << "Nhap so a: ";
+    cin >> a;
+    cout << "Nhap so b: ";
+    cin >> b;
+    cout << "Nhap so c: ";
+    cin >> c;
+
+    // Sắp xếp bằng cách so sánh và hoán đổi
+    if (a > b) {
+        temp1 = a; // Hoán đổi a và b
+        a = b;
+        b = temp1;
+    }
+
+    if (a > c) {
+        temp1 = a; // Hoán đổi a và c
+        a = c;
+        c = temp1;
+    }
+
+    if (b > c) {
+        temp1 = b; // Hoán đổi b và c
+        b = c;
+        c = temp1;
+    }
+
+    // In ra các số theo thứ tự tăng dần
+    cout << "Cac so theo thu tu tang dan: " << a << ", " << b << ", " << c << endl;
+
+    return 0;
+}
