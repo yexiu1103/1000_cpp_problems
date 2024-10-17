@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath> // Thư viện cho pow()
+using namespace std;
+
+int main() {
+    int n;
+    double x;
+
+    cout << "Nhap x: ";
+    cin >> x;
+
+    cout << "Nhap n: ";
+    cin >> n;
+
+    double tong = 0;
+    for (int i = 1; i <= n; i++) {
+        tong += pow(x, i); // Tính x^i và cộng dồn
+    }
+
+    cout << "Tong S(n) = x + x^2 + ... + x^n = " << tong << endl;
+
+    return 0;
+}
