@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra xem số nguyên dương n có các chữ số tăng dần từ trái qua phải không
+bool laSoTangDan(unsigned long long n) {
+    int lastDigit = 10; // Khởi tạo giá trị chữ số cuối cùng lớn hơn bất kỳ chữ số nào
+
+    while (n > 0) {
+        int currentDigit = n % 10; // Lấy chữ số cuối
+        if (currentDigit >= lastDigit) { // Nếu chữ số hiện tại không nhỏ hơn chữ số trước đó
+            return false; // Trả về false nếu không tăng dần
+        }
+        lastDigit = currentDigit; // Cập nhật chữ số cuối
+        n /= 10; // Loại bỏ chữ số cuối
+    }
+    return true; // Nếu tất cả các chữ số đều tăng dần, trả về true
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm laSoTangDan
+    if (laSoTangDan(n)) {
+        cout << "Cac chu so cua n tang dan tu trai qua phai." << endl;
+    } else {
+        cout << "Cac chu so cua n khong tang dan tu trai qua phai." << endl;
+    }
+
+    return 0;
+}
