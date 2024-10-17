@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string hoTen;
+    float diemToan, diemVan, diemTrungBinh;
+
+    cout << "Nhap ho ten hoc sinh: ";
+    getline(cin, hoTen); // Nhập họ tên, có thể chứa khoảng trắng
+
+    cout << "Nhap diem toan: ";
+    cin >> diemToan;
+
+    cout << "Nhap diem van: ";
+    cin >> diemVan;
+
+    // Tính điểm trung bình
+    diemTrungBinh = (diemToan + diemVan) / 2;
+
+    // Xuất kết quả
+    cout << "Ho ten: " << hoTen << endl;
+    cout << "Diem trung binh: " << diemTrungBinh << endl;
+
+    return 0;
+}
