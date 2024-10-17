@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+void docSoBaChuSo(int n) {
+    if (n < 100 || n > 999) {
+        cout << "Không phải số nguyên có ba chữ số." << endl;
+        return;
+    }
+
+    int hangTram = n / 100; // Lấy chữ số hàng trăm
+    int hangChuc = (n / 10) % 10; // Lấy chữ số hàng chục
+    int hangDonVi = n % 10; // Lấy chữ số hàng đơn vị
+
+    // Đọc chữ số hàng trăm
+    switch (hangTram) {
+        case 1: cout << "Một trăm"; break;
+        case 2: cout << "Hai trăm"; break;
+        case 3: cout << "Ba trăm"; break;
+        case 4: cout << "Bốn trăm"; break;
+        case 5: cout << "Năm trăm"; break;
+        case 6: cout << "Sáu trăm"; break;
+        case 7: cout << "Bảy trăm"; break;
+        case 8: cout << "Tám trăm"; break;
+        case 9: cout << "Chín trăm"; break;
+    }
+
+    // Đọc chữ số hàng chục
+    if (hangChuc > 0) {
+        cout << " ";
+        switch (hangChuc) {
+            case 1: cout << "mười"; break;
+            case 2: cout << "hai mươi"; break;
+            case 3: cout << "ba mươi"; break;
+            case 4: cout << "b
