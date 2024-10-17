@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+    cout << "Nhap a: ";
+    cin >> a;
+    cout << "Nhap b: ";
+    cin >> b;
+
+    // Kiểm tra trường hợp a = 0
+    if (a == 0) {
+        if (b == 0) {
+            cout << "Phuong trinh co vo so nghiem." << endl; // Phương trình 0 = 0
+        } else {
+            cout << "Phuong trinh vo nghiem." << endl; // Phương trình b = 0 (b khác 0)
+        }
+    } else {
+        // Giải phương trình ax + b = 0
+        double x = -b / a; // Tính nghiệm x
+        cout << "Nghiem cua phuong trinh la: " << x << endl;
+    }
+
+    return 0;
+}
