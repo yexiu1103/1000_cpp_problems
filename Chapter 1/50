@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tìm số đảo ngược của một số nguyên dương
+unsigned long long soDaoNguoc(unsigned long long n) {
+    unsigned long long daoNguoc = 0; // Khởi tạo số đảo ngược
+    while (n > 0) {
+        daoNguoc = daoNguoc * 10 + n % 10; // Lấy chữ số cuối và thêm vào số đảo ngược
+        n /= 10; // Loại bỏ chữ số cuối
+    }
+    return daoNguoc; // Trả về số đảo ngược
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so nguyen duong n: ";
+    cin >> n;
+
+    // Gọi hàm soDaoNguoc
+    unsigned long long daoNguoc = soDaoNguoc(n);
+
+    cout << "So dao nguoc cua n la: " << daoNguoc << endl;
+
+    return 0;
+}
