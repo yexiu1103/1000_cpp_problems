@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath> // Thư viện cho hàm abs()
+using namespace std;
+
+int main() {
+    float a, b, c;
+
+    // Nhập 3 số thực từ người dùng
+    cout << "Nhap so thuc a: ";
+    cin >> a;
+    cout << "Nhap so thuc b: ";
+    cin >> b;
+    cout << "Nhap so thuc c: ";
+    cin >> c;
+
+    // Thay thế số âm bằng trị tuyệt đối của nó
+    if (a < 0) {
+        a = abs(a);
+    }
+    if (b < 0) {
+        b = abs(b);
+    }
+    if (c < 0) {
+        c = abs(c);
+    }
+
+    // In ra kết quả
+    cout << "Cac so sau khi thay the la: " << a << ", " << b << ", " << c << endl;
+
+    return 0;
+}
