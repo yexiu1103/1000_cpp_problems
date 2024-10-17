@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+double S(double x, int n) {
+    double sum = -x;  // Bắt đầu với hạng tử đầu là -x
+    double factorial = 1;  // Giai thừa khởi đầu là 1
+    for (int k = 2; k <= n; k++) {
+        factorial *= k;  // Tính giai thừa k!
+        sum += pow(-1, k) * pow(x, k) / factorial;  // Tính hạng tử và cộng vào tổng
+    }
+    return sum;
+}
+
+int main() {
+    double x;
+    int n;
+
+    cout << "Nhap gia tri x: ";
+    cin >> x;
+    cout << "Nhap gia tri n: ";
+    cin >> n;
+
+    double result = S(x, n);
+
+    cout << "S(" << x << ", " << n << ") = " << result << endl;
+
+    return 0;
+}
