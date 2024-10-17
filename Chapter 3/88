@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Sử dụng vòng lặp for để xuất các ký tự từ A đến Z
+    for (char c = 'A'; c <= 'Z'; c++) {
+        cout << c << " "; // Xuất ký tự và thêm khoảng trắng
+    }
+    cout << endl; // Xuất xuống dòng sau khi hoàn tất
+
+    return 0;
+}
