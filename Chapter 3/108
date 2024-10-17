@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double tinhS(double x, int y) {
+    return pow(x, y);
+}
+
+int main() {
+    double x;
+    int y;
+    cout << "Nhập giá trị x: ";
+    cin >> x;
+    cout << "Nhập số nguyên y: ";
+    cin >> y;
+
+    double result = tinhS(x, y);
+    cout << "S = " << x << "^" << y << " = " << result << endl;
+
+    return 0;
+}
