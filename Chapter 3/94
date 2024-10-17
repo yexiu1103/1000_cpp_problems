@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Sử dụng vòng lặp for để in tất cả các số lẻ nhỏ hơn 100
+    for (int i = 1; i < 100; i += 2) {
+        if (i != 5 && i != 7 && i != 93) { // Kiểm tra nếu i không phải là 5, 7, hoặc 93
+            cout << i << " "; // Xuất số lẻ
+        }
+    }
+    cout << endl; // Xuất xuống dòng sau khi hoàn tất
+
+    return 0;
+}
