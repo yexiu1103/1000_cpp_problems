@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int timChuSo(unsigned long long n) {
+    int min = 0;
+   int last = n%10;
+    while (n > 0) {
+        if(last < min){
+            min = last;
+        }
+        n /= 10; 
+
+    }
+    return max;
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    int chuSoNhoNhat = timChuSo(n);
+
+    cout << "Chu so nho nhat cua n la: " << chuSoNhoNhat << endl;
+
+    return 0;
+}
