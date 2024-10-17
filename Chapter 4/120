@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath> // Thư viện cho sqrt()
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap n: ";
+    cin >> n;
+
+    cout << "Cac so chinh phuong nho hon " << n << " la: ";
+    for (int i = 1; i * i < n; i++) {
+        cout << i * i << " "; // In ra số chính phương
+    }
+    cout << endl;
+
+    return 0;
+}
