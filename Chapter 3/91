@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Sử dụng vòng lặp for để in tất cả các số nguyên dương lẻ nhỏ hơn 100
+    for (int i = 1; i < 100; i += 2) {
+        cout << i << " "; // Xuất số nguyên dương lẻ
+    }
+    cout << endl; // Xuất xuống dòng sau khi hoàn tất
+
+    return 0;
+}
