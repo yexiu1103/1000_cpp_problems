@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+long long S(int n) {
+    long long sum = (n * (n + 1)) / 2; // Tính tổng từ 1 đến n
+    return sum * sum; // Tính bình phương của tổng
+}
+
+int main() {
+    int n;
+    cout << "Nhap gia tri n: ";
+    cin >> n;
+
+    long long result = S(n);
+
+    cout << "S(" << n << ") = " << result << endl;
+
+    return 0;
+}
