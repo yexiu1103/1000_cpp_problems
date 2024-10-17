@@ -1,0 +1,34 @@
+/* Ý tưởng: Để kiểm tra xem n có phải số đối xứng không, ta đảo ngược lại số đó và kiểm tra xem hai số có bằng nhau không.*/
+
+#include <iostream>
+using namespace std;
+
+// Hàm tìm số đảo ngược của một số nguyên dương
+unsigned long long soDaoNguoc(unsigned long long n) {
+    unsigned long long daoNguoc = 0; // Khởi tạo số đảo ngược
+    while (n > 0) {
+        daoNguoc = daoNguoc * 10 + n % 10; // Thêm chữ số cuối vào số đảo ngược
+        n /= 10; // Loại bỏ chữ số cuối
+    }
+    return daoNguoc; // Trả về số đảo ngược
+}
+
+// Hàm kiểm tra xem số n có phải là số đối xứng không
+bool laSoDoiXung(unsigned long long n) {
+    return n == soDaoNguoc(n); // So sánh n với số đảo ngược của n
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm laSoDoiXung
+    if (laSoDoiXung(n)) {
+        cout << "So n la so doi xung." << endl;
+    } else {
+        cout << "So n khong la so doi xung." << endl;
+    }
+
+    return 0;
+}
