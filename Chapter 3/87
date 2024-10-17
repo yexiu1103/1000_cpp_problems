@@ -8,12 +8,12 @@ int main()
    int sum;
    sum = n*(n+1)/2;
    
-   while (sum < 10000){
+   while (sum <= 10000){
        sum+=n;
        n++;
    }
    
-   cout << n;
+   cout << n---;
    
    
     return 0;
