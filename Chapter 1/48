@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tính tích các chữ số lẻ của một số tự nhiên
+int tichChuSoLe(unsigned long long n) {
+    int multiple = 1;
+    bool hasOdd = false; // Biến này kiểm tra có chữ số lẻ hay không
+
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit % 2 == 1) { // Kiểm tra nếu chữ số cuối là số lẻ
+            multiple *= digit; // Nhân chữ số lẻ vào tích
+            hasOdd = true; // Đánh dấu là có số lẻ
+        }
+        n /= 10; // Chia n cho 10 để loại bỏ chữ số cuối
+    }
+
+    // Nếu không có chữ số lẻ, trả về 0
+    return hasOdd ? multiple : 0;
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm tichChuSoLe
+    int tich = tichChuSoLe(n);
+
+    cout << "Tich cac chu so le cua n la: " << tich << endl;
+
+    return 0;
+}
