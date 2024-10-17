@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap n: ";
+    cin >> n;
+
+    int tong = 0;
+    for (int i = 1; i <= n; i++) {
+        tong += i; // Cộng dồn các số từ 1 đến n
+    }
+
+    cout << "Tong S(n) = 1 + 2 + ... + n = " << tong << endl;
+
+    return 0;
+}
