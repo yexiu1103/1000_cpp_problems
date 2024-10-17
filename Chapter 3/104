@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int day, month, year;
+    cout << "Nhap ngay: ";
+    cin >> day;
+    cout << "Nhap thang: ";
+    cin >> month;
+    cout << "Nhap nam: ";
+    cin >> year;
+
+    // Xác định số ngày trong từng tháng
+    int daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    // Kiểm tra năm nhuận
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        daysInMonth[1] = 29; // Tháng 2 có 29 ngày
+    }
+
+    // Tính số ngày trong năm
+    int dayOfYear = 0;
+    for (int i = 0; i < month - 1; i++) {
+        dayOfYear += daysInMonth[i];
+    }
+    dayOfYear += day;
+
+    cout << "Ngay " << day << "/" << month << "/" << year << " la ngay thu " << dayOfYear << " trong nam." << endl;
+    return 0;
+}
