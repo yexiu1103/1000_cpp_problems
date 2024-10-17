@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float a, b, c, d, e, f;
+
+    // Nhập hệ số từ người dùng
+    cout << "Nhap he so a: ";
+    cin >> a;
+    cout << "Nhap he so b: ";
+    cin >> b;
+    cout << "Nhap he so c: ";
+    cin >> c;
+    cout << "Nhap he so d: ";
+    cin >> d;
+    cout << "Nhap he so e: ";
+    cin >> e;
+    cout << "Nhap he so f: ";
+    cin >> f;
+
+    // Tính định thức D = ae - bd
+    float D = a * e - b * d;
+
+    // Xét các trường hợp
+    if (D != 0) {
+        // Hệ phương trình có nghiệm duy nhất
+        float x = (c * e - b * f) / D; // Tính x
+        float y = (a * f - c * d) / D; // Tính y
+        cout << "Hệ phương trình có nghiệm duy nhất: x = " << x << ", y = " << y << endl;
+    } else {
+        // Hệ phương trình có thể vô nghiệm hoặc vô số nghiệm
+        if (a * f == c * d && b * f == c * e) {
+            // Vô số nghiệm
+            cout << "Hệ phương trình có vô số nghiệm." << endl;
+        } else {
+            // Vô nghiệm
+            cout << "Hệ phương trình vô nghiệm." << endl;
+        }
+    }
+
+    return 0;
+}
