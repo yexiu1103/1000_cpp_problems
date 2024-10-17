@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>  // Cho pow() và các phép toán khác
+using namespace std;
+
+double S(double x, int n) {
+    double sum = -1;  // Bắt đầu với hạng tử đầu tiên là -1
+    double factorial = 1;  // Biến dùng để tính giai thừa
+    for (int k = 1; k <= n; k++) {
+        factorial *= (2 * k - 1) * (2 * k);  // Tính giai thừa của (2k)!
+        sum += pow(-1, k + 1) * pow(x, 2 * k) / factorial;  // Tính từng hạng tử và cộng vào tổng
+    }
+    return sum;
+}
+
+int main() {
+    double x;
+    int n;
+
+    cout << "Nhap gia tri x: ";
+    cin >> x;
+    cout << "Nhap gia tri n: ";
+    cin >> n;
+
+    double result = S(x, n);
+
+    cout << "S(" << x << ", " << n << ") = " << result << endl;
+
+    return 0;
+}
