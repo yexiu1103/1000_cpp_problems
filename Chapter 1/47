@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Hàm đếm số chữ số chẵn của một số tự nhiên
+int demChuSoChan(unsigned long long n) {
+    int count = 0;
+    if (n == 0) {
+        return 1; // Nếu n = 0, coi số đó là chẵn (vì 0 là số chẵn)
+    }
+    while (n > 0) {
+        if ((n % 10) % 2 == 0) { // Kiểm tra nếu chữ số cuối là số chẵn
+            count++; // Tăng biến đếm nếu chữ số là chẵn
+        }
+        n /= 10; // Chia n cho 10 để loại bỏ chữ số cuối
+    }
+    return count;
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm demChuSoChan
+    int soChuSoChan = demChuSoChan(n);
+
+    cout << "So chu so chan cua n la: " << soChuSoChan << endl;
+
+    return 0;
+}
