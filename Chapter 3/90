@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Nhap gia tri N: ";
+    cin >> N;
+
+    int m = 0; // Khởi tạo m từ 0
+    long long sum = 0; // Khởi tạo tổng
+
+    // Sử dụng vòng lặp while để tìm m lớn nhất sao cho tổng < N
+    while (sum < N) {
+        m++; // Tăng m lên 1
+        sum += m; // Cộng m vào tổng
+    }
+
+    // Giảm m đi 1 để tìm m lớn nhất sao cho tổng < N
+    m--;
+
+    cout << "So nguyen duong m lon nhat sao cho 1 + 2 + ... + m < " << N << " la: " << m << endl;
+
+    return 0;
+}
