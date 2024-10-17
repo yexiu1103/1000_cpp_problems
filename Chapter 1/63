@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tính Ước số chung lớn nhất (ƯSCN) của hai số a và b
+int uocSoChungLonNhat(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a; // Trả về ƯSCN
+}
+
+// Hàm tính Bội chung nhỏ nhất (BCNN) của hai số a và b
+int boiChungNhoNhat(int a, int b) {
+    return (a * b) / uocSoChungLonNhat(a, b); // Tính BCNN
+}
+
+int main() {
+    int a, b;
+    cout << "Nhap hai so nguyen duong a va b: ";
+    cin >> a >> b;
+
+    // Gọi hàm boiChungNhoNhat
+    int bcnn = boiChungNhoNhat(a, b);
+
+    cout << "Boi chung nho nhat cua " << a << " va " << b << " la: " << bcnn << endl;
+
+    return 0;
+}
