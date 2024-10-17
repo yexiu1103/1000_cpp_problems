@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+double S(int n) {
+    double sum = 0;
+    double result = 0;
+    for (int k = 1; k <= n; k++) {
+        sum += k;
+        result += 1.0 / sum;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    cout << "Nhap gia tri n: ";
+    cin >> n;
+    
+    double result = S(n);
+
+    cout << "Gia tri cua S(" << n << ") = " << result << endl;
+
+    return 0;
+}
