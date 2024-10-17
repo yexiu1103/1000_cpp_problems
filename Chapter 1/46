@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Hàm đếm số chữ số lẻ của một số tự nhiên
+int demChuSoLe(unsigned long long n) {
+    int count = 0;
+    if (n == 0) {
+        return 0; // Nếu n = 0, số chữ số lẻ là 0
+    }
+    while (n > 0) {
+        if ((n % 10) % 2 == 1) { // Kiểm tra nếu chữ số cuối là số lẻ
+            count++; // Tăng biến đếm nếu chữ số là lẻ
+        }
+        n /= 10; // Chia n cho 10 để loại bỏ chữ số cuối
+    }
+    return count;
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm demChuSoLe
+    int soChuSoLe = demChuSoLe(n);
+
+    cout << "So chu so le cua n la: " << soChuSoLe << endl;
+
+    return 0;
+}
