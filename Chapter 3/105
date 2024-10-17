@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+void docSoHaiChuSo(int n) {
+    if (n < 10 || n > 99) {
+        cout << "Không phải số tự nhiên có hai chữ số." << endl;
+        return;
+    }
+
+    int hangChuc = n / 10; // Lấy chữ số hàng chục
+    int hangDonVi = n % 10; // Lấy chữ số hàng đơn vị
+
+    // Đọc chữ số hàng chục
+    switch (hangChuc) {
+        case 1: cout << "Mười"; break;
+        case 2: cout << "Hai mươi"; break;
+        case 3: cout << "Ba mươi"; break;
+        case 4: cout << "Bốn mươi"; break;
+        case 5: cout << "Năm mươi"; break;
+        case 6: cout << "Sáu mươi"; break;
+        case 7: cout << "Bảy mươi"; break;
+        case 8: cout << "Tám mươi"; break;
+        case 9: cout << "Chín mươi"; break;
+    }
+
+    // Đọc chữ số hàng đơn vị
+    if (hangDonVi != 0) {
+        cout << " ";
+        switch (hangDonVi) {
+            case 1: cout << "một"; break;
+            case 2: cout << "hai"; break;
+            case 3: cout << "ba"; break;
+            case 4: cout << "bốn"; break;
+            case 5: cout << "năm"; break;
+            case 6: cout << "sáu"; break;
+            case 7: cout << "bảy"; break;
+            case 8: cout << "tám"; break;
+            case 9: cout << "chín"; break;
+        }
+    }
+    
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Nhập số tự nhiên có hai chữ số: ";
+    cin >> n;
+
+    docSoHaiChuSo(n);
+
+    return 0;
+}
