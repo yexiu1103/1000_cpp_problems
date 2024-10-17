@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x;
+
+    // Nhập giá trị x từ người dùng
+    cout << "Nhap gia tri x: ";
+    cin >> x;
+
+    float f; // Khai báo biến f để lưu giá trị của hàm số
+
+    // Tính giá trị của hàm số f(x)
+    if (x >= 5) {
+        f = 2 * x * x + 5 * x + 9; // Tính hàm khi x >= 5
+    } else {
+        f = -2 * x * x + 4 * x - 9; // Tính hàm khi x < 5
+    }
+
+    // In ra kết quả
+    cout << "Gia tri f(" << x << ") = " << f << endl;
+
+    return 0;
+}
