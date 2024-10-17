@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    
+    int tich = a*b;
+    if(tich > 0){
+        cout << "Hai so cung dau";
+    }
+    else {
+        cout << "Hai so khac dau";
+    }
+    
+    return 0;
+}
