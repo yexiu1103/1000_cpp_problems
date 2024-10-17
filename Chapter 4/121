@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath> // Thư viện cho pow() và log10()
+using namespace std;
+
+bool isArmstrong(int x) {
+    int sum = 0;
+    int original = x;
+    int digits = log10(x) + 1; // Số chữ số của x
+
+    while (x > 0) {
+        int digit = x % 10;
+        sum += pow(digit, digits); // Tính tổng các chữ số nâng lên lũy thừa của số chữ số
+        x /= 10; // Loại bỏ chữ số cuối
+    }
+
+    return sum == original; // So sánh tổng với số gốc
+}
+
+int main() {
+    cout << "Cac so Armstrong trong doan [1, 1.000.000] la: ";
+    for (int i = 1; i <= 1000000; i++) {
+        if (isArmstrong(i)) {
+            cout << i << " "; // In ra số Armstrong
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
