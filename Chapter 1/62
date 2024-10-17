@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tính Ước chung lớn nhất (ƯCLN) của hai số a và b
+int uocChungLonNhat(int a, int b) {
+    while (b != 0) {
+        int temp = b; // Lưu giá trị b tạm thời
+        b = a % b; // Cập nhật b là phần dư của a chia b
+        a = temp; // Cập nhật a bằng giá trị b tạm thời
+    }
+    return a; // Khi b = 0, a là ƯCLN
+}
+
+int main() {
+    int a, b;
+    cout << "Nhap hai so nguyen duong a va b: ";
+    cin >> a >> b;
+
+    // Gọi hàm uocChungLonNhat
+    int ucln = uocChungLonNhat(a, b);
+
+    cout << "Uoc chung lon nhat cua " << a << " va " << b << " la: " << ucln << endl;
+
+    return 0;
+}
