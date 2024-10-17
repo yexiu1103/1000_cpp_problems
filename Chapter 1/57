@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra xem số có toàn chữ số chẵn hay không
+bool coToanChuSoChan(unsigned long long n) {
+    while (n > 0) {
+        int digit = n % 10; // Lấy chữ số cuối
+        if (digit % 2 != 0) { // Nếu có chữ số lẻ
+            return false; // Trả về false
+        }
+        n /= 10; // Loại bỏ chữ số cuối
+    }
+    return true; // Nếu không có chữ số lẻ nào, trả về true
+}
+
+int main() {
+    unsigned long long n;
+    cout << "Nhap so tu nhien n: ";
+    cin >> n;
+
+    // Gọi hàm coToanChuSoChan
+    bool toanChuSoChan = coToanChuSoChan(n);
+
+    if (toanChuSoChan) {
+        cout << "So n chua toan chu so chan." << endl;
+    } else {
+        cout << "So n khong chua toan chu so chan." << endl;
+    }
+
+    return 0;
+}
