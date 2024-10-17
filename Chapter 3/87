@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int n;
+   
+   int sum;
+   sum = n*(n+1)/2;
+   
+   while (sum < 10000){
+       sum+=n;
+       n++;
+   }
+   
+   cout << n;
+   
+   
+    return 0;
+}
