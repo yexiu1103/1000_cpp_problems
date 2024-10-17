@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Hàm tính giai thừa
+double factorial(int n) {
+    double result = 1.0;
+    for (int i = 1; i <= n; i++) {
+        result *= i; // Tính giai thừa
+    }
+    return result;
+}
+
+// Hàm tính sin(x) bằng công thức chuỗi Taylor
+double sinTaylor(double x) {
+    double sum = 0.0;
+    double term; // Biến lưu từng hạng tử
+    int n = 0; // Biến đếm số hạng tử
+    do {
+        term = pow(-1, n) * pow(x, 2 * n + 1) / factorial(2 * n + 1); // Tính hạng tử
+        sum += term; // Cộng hạng tử vào tổng
+        n++; // Tăng số hạng tử
+    } while (fabs(term) >= 0.00001); // Tiếp tục cho đến khi hạng tử nhỏ hơn độ chính xác yêu cầu
+    return sum;
+}
+
+int main() {
+    double x;
+    cout << "Nhap gia tri x (rad): ";
+    cin >> x;
+
+    double result = sinTaylor(x); // Tính sin(x)
+    cout << "sin(" << x << ") = " << result << endl;
+
+    return 0;
+}
