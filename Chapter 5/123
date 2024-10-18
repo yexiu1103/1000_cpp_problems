@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int timViTri(int arr[], int n){
+    int minViTri = 0; 
+    for(int i=1; i<=n; i++){
+        if(arr[i]<arr[minViTri]){
+            minViTri = i;
+        }
+    }
+    return minViTri;
+}
+int main(){
+    int n;
+    cin>>n;
+    
+    int arr[n];
+    for(int i=0; i<=n; i++){
+        cin >> arr[i];
+    }
+    
+    int minViTri = timViTri(arr, n);
+    
+    cout << minViTri;
+    
+    return 0;
+}
