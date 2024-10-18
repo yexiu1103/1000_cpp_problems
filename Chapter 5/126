@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap so phan tu cua mang: ";
+    cin >> n;
+    
+    double arr[n];
+    cout << "Nhap cac phan tu cua mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    
+    double sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < 0) {  // Kiểm tra xem phần tử có là số âm không
+            sum += arr[i]; // Cộng tổng nếu là số âm
+        }
+    }
+    
+    cout << "Tong cac so am trong mang la: " << sum << endl;
+    return 0;
+}
