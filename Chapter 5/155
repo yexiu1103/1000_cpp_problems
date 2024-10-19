@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    
+    double arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    
+    double x;
+    cin>>x;
+    
+    // Tìm phần tử xa giá trị x nhất
+    double khoangCach = fabs(x-arr[0]);
+    double phanTuXaNhat = arr[0];
+    for(int i=0; i<n; i++){
+        if(khoangCach<fabs(x-arr[i])){
+            khoangCach = fabs(x-arr[i]);
+            phanTuXaNhat = arr[i];
+        }
+    }
+    
+    cout << khoangCach << " " << phanTuXaNhat;
+    return 0;
+}
