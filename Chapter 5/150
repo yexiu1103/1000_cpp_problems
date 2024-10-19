@@ -1,0 +1,30 @@
+/******************************************************************************
+Hãy tìm “giá trị âm lớn nhất” trong mảng các sốthực (amlonnhat). Nếu mảng không có giá trịâm thì trảvềgiá trị0.
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+int main()
+{
+   int n;
+   cin >> n;
+   
+   int arr[n];
+   for(int i=0; i<n; i++){
+       cin >> arr[i];
+   }
+   bool soAm = false;
+   double max = arr[0];
+   for(int i=0; i<n; i++){
+       if(arr[i]<0){
+           soAm = true;
+           if(max < arr[i])
+           max = arr[i];
+       }
+   }
+   if(!soAm){
+       cout << "0";
+    }
+    else 
+    cout << max;
+    return 0;
+}
