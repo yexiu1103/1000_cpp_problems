@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath> // Để sử dụng hàm fabs (lấy giá trị tuyệt đối)
+using namespace std;
+
+int main() {
+    int n;
+
+    // Nhập kích thước mảng và các phần tử
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    float arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Khởi tạo x với giá trị tuyệt đối của phần tử đầu tiên
+    float x = fabs(arr[0]);
+
+    // Tìm giá trị tuyệt đối lớn nhất trong mảng
+    for (int i = 1; i < n; i++) {
+        float absVal = fabs(arr[i]);
+        if (absVal > x) {
+            x = absVal;
+        }
+    }
+
+    // Kết quả: x là giá trị lớn nhất trong các giá trị tuyệt đối
+    cout << "Giá trị x sao cho đoạn [-x, x] chứa tất cả các giá trị trong mảng là: " << x << endl;
+
+    return 0;
+}
