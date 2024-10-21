@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int daoSo(int n) {
+    int soDao = 0;
+    
+    while (n != 0) {
+        int chuSo = n % 10;     // Lấy chữ số cuối cùng
+        soDao = soDao * 10 + chuSo;  // Xây dựng số đảo ngược
+        n /= 10;               // Loại bỏ chữ số cuối cùng của n
+    }
+    
+    return soDao;
+}
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    
+    
+    
+    bool soDauTien=false;
+    for(int i=0; i<n; i++){
+        int soDao = daoSo(arr[i]);
+        if(soDao == arr[i]){
+            soDauTien=true;
+            cout<<arr[i];
+            break;
+        }
+    }
+    if(!soDauTien)
+    cout << "0";
+    return 0;
+}
