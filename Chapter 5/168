@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra xem một số có phải là dạng 5^k hay không
+bool laLuyThuaCuaNam(int n) {
+    if (n < 1) {
+        return false;
+    }
+    while (n % 5 == 0) {
+        n /= 5;
+    }
+    return n == 1;
+}
+
+// Hàm tìm giá trị lớn nhất có dạng 5^k trong mảng
+int timGiaTriLonNhatDang5k(int arr[], int n) {
+    int maxValue = 0; // Khởi tạo giá trị lớn nhất là 0 (trường hợp không tìm thấy)
+    
+    for (int i = 0; i < n; i++) {
+        if (laLuyThuaCuaNam(arr[i])) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i]; // Cập nhật giá trị lớn nhất
+            }
+        }
+    }
+
+    return maxValue; // Trả về giá trị lớn nhất tìm được
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm giá trị lớn nhất có dạng 5^k
+    int ketQua = timGiaTriLonNhatDang5k(arr, n);
+
+    if (ketQua != 0) {
+        cout << "Giá trị lớn nhất có dạng 5^k trong mảng là: " << ketQua << endl;
+    } else {
+        cout << "Không có giá trị nào có dạng 5^k trong mảng." << endl;
+    }
+
+    return 0;
+}
