@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tính UCLN của hai số
+int ucln(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Hàm tìm UCLN của tất cả các phần tử trong mảng
+int timUCLN(int arr[], int n) {
+    int result = arr[0]; // Khởi tạo UCLN với phần tử đầu tiên
+    for (int i = 1; i < n; i++) {
+        result = ucln(result, arr[i]);
+        if (result == 1) { // Nếu UCLN bằng 1 thì dừng lại, không thể nhỏ hơn 1
+            return 1;
+        }
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm UCLN của tất cả các phần tử trong mảng
+    int ketQua = timUCLN(arr, n);
+
+    cout << "UCLN của tất cả các phần tử trong mảng là: " << ketQua << endl;
+
+    return 0;
+}
