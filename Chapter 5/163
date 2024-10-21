@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath> // Để sử dụng hàm sqrt
+using namespace std;
+
+// Hàm kiểm tra xem một số có phải là số chính phương không
+bool laSoChinhPhuong(int n) {
+    if (n < 0) return false; // Số âm không phải là số chính phương
+    int canBacHai = static_cast<int>(sqrt(n)); // Lấy căn bậc hai và làm tròn xuống
+    return (canBacHai * canBacHai == n); // Kiểm tra xem bình phương có bằng số ban đầu không
+}
+
+// Hàm tìm số chính phương đầu tiên trong mảng
+int timSoChinhPhuongDauTien(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (laSoChinhPhuong(arr[i])) {
+            return arr[i]; // Trả về số chính phương đầu tiên
+        }
+    }
+    return -1; // Nếu không có số chính phương nào, trả về -1
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm số chính phương đầu tiên
+    int ketQua = timSoChinhPhuongDauTien(arr, n);
+
+    if (ketQua != -1) {
+        cout << "Số chính phương đầu tiên trong mảng là: " << ketQua << endl;
+    } else {
+        cout << "Không có số chính phươ
