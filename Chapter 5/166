@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+// Hàm kiểm tra xem một số có phải là lũy thừa của 2 không
+bool laLuyThuaCuaHai(int n) {
+    return (n > 0 && (n & (n - 1)) == 0);
+}
+
+// Hàm tìm giá trị đầu tiên có dạng 2^k trong mảng
+int timGiaTriDauTienDang2k(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (laLuyThuaCuaHai(arr[i])) {
+            return arr[i]; // Trả về giá trị đầu tiên có dạng 2^k
+        }
+    }
+    return 0; // Nếu không có giá trị nào dạng 2^k, trả về 0
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm giá trị đầu tiên có dạng 2^k
+    int ketQua = timGiaTriDauTienDang2k(arr, n);
+
+    if (ketQua != 0) {
+        cout << "Giá trị đầu tiên có dạng 2^k trong mảng là: " << ketQua << endl;
+    } else {
+        cout << "Không có giá trị nào có dạng 2^k trong mảng." << endl;
+    }
+
+    return 0;
+}
