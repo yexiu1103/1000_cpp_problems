@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Hàm kiểm tra số nguyên tố
+bool kiemTraSoNguyenTo(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+// Hàm tìm số nguyên tố nhỏ nhất lớn hơn mọi giá trị trong mảng
+int timSoNguyenToNhoNhatLonHonMoiGiaTri(int arr[], int n) {
+    // Bước 1: Tìm giá trị lớn nhất trong mảng
+    int maxVal = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+        }
+    }
+
+    // Bước 2: Tìm số nguyên tố lớn hơn maxVal
+    int soNguyenTo = maxVal + 1;
+    while (true) {
+        if (kiemTraSoNguyenTo(soNguyenTo)) {
+            return soNguyenTo;
+        }
+        soNguyenTo++;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm số nguyên tố nhỏ nhất lớn hơn mọi giá trị trong mảng
+    int ketQua = timSoNguyenToNhoNhatLonHonMoiGiaTri(arr, n);
+
+    cout << "Số nguyên tố nhỏ nhất lớn hơn mọi giá trị trong mảng là: " << ketQua << endl;
+
+    return 0;
+}
