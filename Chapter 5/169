@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+// Hàm tìm số chẵn lớn nhất nhỏ hơn mọi giá trị lẻ trong mảng
+int timSoChanLonNhatNhoHonMoiGiaTriLe(int arr[], int n) {
+    int soLeNhoNhat = -1; // Khởi tạo giá trị lẻ nhỏ nhất
+    int soChanLonNhat = -1; // Khởi tạo giá trị chẵn lớn nhất
+
+    // Bước 1: Tìm số lẻ nhỏ nhất trong mảng
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 != 0) { // Nếu là số lẻ
+            if (soLeNhoNhat == -1 || arr[i] < soLeNhoNhat) {
+                soLeNhoNhat = arr[i]; // Cập nhật số lẻ nhỏ nhất
+            }
+        }
+    }
+
+    // Nếu không có số lẻ nào thì trả về -1 ngay lập tức
+    if (soLeNhoNhat == -1) {
+        return -1;
+    }
+
+    // Bước 2: Tìm số chẵn lớn nhất nhỏ hơn số lẻ nhỏ nhất
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0 && arr[i] < soLeNhoNhat) { // Nếu là số chẵn và nhỏ hơn số lẻ nhỏ nhất
+            if (soChanLonNhat == -1 || arr[i] > soChanLonNhat) {
+                soChanLonNhat = arr[i]; // Cập nhật số chẵn lớn nhất
+            }
+        }
+    }
+
+    return soChanLonNhat;
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm số chẵn lớn nhất nhỏ hơn mọi giá trị lẻ trong mảng
+    int ketQua = timSoChanLonNhatNhoHonMoiGiaTriLe(arr, n);
+
+    if (ketQua != -1) {
+        cout << "Số chẵn lớn nhất nhỏ hơn mọi giá trị lẻ là: " << ketQua << endl;
+    } else {
+        cout << "Không có số chẵn nào nhỏ hơn mọi giá trị lẻ trong mảng." << endl;
+    }
+
+    return 0;
+}
