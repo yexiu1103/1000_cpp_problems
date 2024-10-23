@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Hàm đếm tần suất của các chữ số trong một số nguyên
+void demChuSo(int n, int tanSuat[]) {
+    n = abs(n); // Đảm bảo số là số dương
+    if (n == 0) {
+        tanSuat[0]++;
+    }
+    while (n > 0) {
+        int chuSo = n % 10;
+        tanSuat[chuSo]++;
+        n /= 10;
+    }
+}
+
+// Hàm tìm chữ số xuất hiện ít nhất trong mảng
+int timChuSoXuatHienItNhat(int arr[], int n) {
+    int tanSuat[10] = {0}; // Mảng đếm tần suất của các chữ số từ 0 đến 9
+
+    // Duyệt qua từng phần tử của mảng và đếm tần suất các chữ số
+    for (int i = 0; i < n; i++) {
+        demChuSo(arr[i], tanSuat);
+    }
+
+    // Tìm chữ số xuất hiện ít nhất (xuất hiện ít nhất khác 0)
+    int chuSoItNhat = -1;
+    int tanSuatMin = -1;
+
+    for (int i = 0; i < 10; i++) {
+        if (tanSuat[i] > 0 && (tanSuatMin == -1 || tanSuat[i] < tanSuatMin)) {
+            tanSuatMin = tanSuat[i];
+            chuSoItNhat = i;
+        }
+    }
+
+    return chuSoItNhat;
+}
+
+int main() {
+    int n;
+    cout << "Nhập kích thước mảng: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhập các phần tử của mảng: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Gọi hàm tìm chữ số xuất hiện ít nhất
+    int ketQua = timChuSoXuatHienItNhat(arr, n);
+
+    cout << "Chữ số xuất hiện ít nhất trong mảng là: " << ketQua << endl;
+
+    return 0;
+}
