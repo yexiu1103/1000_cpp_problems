@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cmath>
+#include <cfloat> // Sử dụng DBL_MAX cho giá trị lớn nhất của kiểu double
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    // Kiểm tra số lượng phần tử
+    if (n < 2) {
+        cout << "Mang phai co nhieu hon 2 gia tri." << endl;
+        return 0;
+    }
+    
+    double arr[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Kiểm tra các phần tử trong mảng có phân biệt không
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                cout << "Cac phan tu phai phan biet." << endl;
+                return 0;
+            }
+        }
+    }
+    
+    // Tìm hai giá trị gần nhau nhất
+    double minDiff = DBL_MAX;
+    int index1 = 0, index2 = 1;
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            double diff = fabs(arr[i] - arr[j]);
+            if (diff < minDiff) {
+                minDiff = diff;
+                index1 = i;
+                index2 = j;
+            }
+        }
+    }
+
+    // In ra hai giá trị gần nhau nhất
+    cout << "Hai gia tri gan nhau nhat la: (" << arr[index1] << ", " << arr[index2] << ")" << endl;
+
+    return 0;
+}
