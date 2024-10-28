@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+bool isElementInArray(int arr[], int size, int element) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == element) {
+            return true; // Phần tử tìm thấy trong mảng
+        }
+    }
+    return false; // Phần tử không tìm thấy
+}
+
+bool areAllElementsInArray(int a[], int sizeA, int b[], int sizeB) {
+    for (int i = 0; i < sizeA; i++) {
+        if (!isElementInArray(b, sizeB, a[i])) {
+            return false; // Nếu một phần tử không tìm thấy, trả về false
+        }
+    }
+    return true; // Tất cả phần tử đều tìm thấy
+}
+
+int main() {
+    int n, m;
+
+    cout << "Nhập số lượng phần tử của mảng a: ";
+    cin >> n;
+
+    int a[n]; // Khai báo mảng a
+    cout << "Nhập các phần tử của mảng a:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> a[i]; // Nhập các phần tử của mảng a
+    }
+
+    cout << "Nhập số lượng phần tử của mảng b: ";
+    cin >> m;
+
+    int b[m]; // Khai báo mảng b
+    cout << "Nhập các phần tử của mảng b:\n";
+    for (int i = 0; i < m; i++) {
+        cin >> b[i]; // Nhập các phần tử của mảng b
+    }
+
+    if (areAllElementsInArray(a, n, b, m)) {
+        cout << "Tất cả các phần tử của mảng a đều thuộc mảng b." << endl;
+    } else {
+        cout << "Có ít nhất một phần tử của mảng a không thuộc mảng b." << endl;
+    }
+
+    return 0;
+}
