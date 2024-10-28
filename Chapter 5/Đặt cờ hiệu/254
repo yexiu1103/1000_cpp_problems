@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void findLargerThanPrevious(int arr[], int size) {
+    if (size < 1) return; // Nếu mảng rỗng
+
+    int maxSoFar = arr[0]; // Khởi tạo giá trị lớn nhất hiện tại
+
+    cout << "Các số lớn hơn tất cả các số đằng trước: ";
+    
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > maxSoFar) {
+            cout << arr[i] << " "; // In số nếu lớn hơn maxSoFar
+            maxSoFar = arr[i]; // Cập nhật giá trị lớn nhất hiện tại
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+
+    cout << "Nhập số lượng phần tử của mảng: ";
+    cin >> n;
+
+    int arr[n]; // Khai báo mảng
+
+    cout << "Nhập các phần tử của mảng:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i]; // Nhập các phần tử
+    }
+
+    findLargerThanPrevious(arr, n);
+
+    return 0;
+}
