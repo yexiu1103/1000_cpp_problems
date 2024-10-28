@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath> // Thư viện cho hàm fabs để tính giá trị tuyệt đối
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+
+    if (n < 2) {
+        cout << "Mang phai co it nhat hai phan tu de tinh khoang cach." << endl;
+        return 0;
+    }
+
+    double arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    double sumDistances = 0;
+    for (int i = 0; i < n - 1; i++) {
+        sumDistances += fabs(arr[i + 1] - arr[i]); // Tính khoảng cách giữa các phần tử liên tiếp
+    }
+
+    double avgDistance = sumDistances / (n - 1); // Tính trung bình cộng
+    cout << "Trung binh cong cac khoang cach trong mang: " << avgDistance << endl;
+    return 0;
+}
