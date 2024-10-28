@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int sum = 0;
+    for (int i = 1; i < n; i++) { // Bắt đầu từ vị trí 1
+        if (arr[i] > arr[i - 1]) { // Kiểm tra nếu giá trị hiện tại lớn hơn giá trị trước đó
+            sum += arr[i];         // Cộng phần tử vào tổng nếu thỏa mãn
+        }
+    }
+
+    cout << "Tong cac gia tri lon hon gia tri dung truoc trong mang: " << sum << endl;
+    return 0;
+}
