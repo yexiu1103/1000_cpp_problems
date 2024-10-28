@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int timViTriGiaTriLonNhat(double arr[], int n) {
+    int viTriMax = 0; // Giả sử phần tử đầu tiên là lớn nhất
+    
+    for (int i = 1; i < n; i++) { // Bắt đầu từ phần tử thứ 2
+        if (arr[i] > arr[viTriMax]) {
+            viTriMax = i; // Cập nhật vị trí của giá trị lớn nhất
+        }
+    }
+    return viTriMax;
+}
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+    
+    double arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int viTriLonNhat = timViTriGiaTriLonNhat(arr, n);
+    cout << "Vi tri cua gia tri lon nhat trong mang la: " << viTriLonNhat << endl;
+
+    return 0;
+}
