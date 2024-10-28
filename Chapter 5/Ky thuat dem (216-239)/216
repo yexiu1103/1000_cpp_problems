@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+
+    int arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int count = 0; // Biến đếm số lượng số chẵn
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) { // Kiểm tra nếu phần tử là số chẵn
+            count++;
+        }
+    }
+
+    cout << "So luong so chan trong mang: " << count << endl;
+    return 0;
+}
