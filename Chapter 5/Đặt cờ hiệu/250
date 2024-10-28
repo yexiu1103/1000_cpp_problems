@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+bool isArithmeticProgression(int arr[], int size) {
+    if (size < 2) return true; // Nếu mảng có ít hơn 2 phần tử, nó là cấp số cộng
+
+    int d = arr[1] - arr[0]; // Tính công sai
+
+    for (int i = 2; i < size; i++) {
+        if (arr[i] - arr[i - 1] != d) {
+            return false; // Nếu hiệu không bằng công sai, không phải cấp số cộng
+        }
+    }
+
+    return true; // Nếu không có sự khác biệt nào, là cấp số cộng
+}
+
+int main() {
+    int n;
+
+    cout << "Nhập số lượng phần tử của mảng: ";
+    cin >> n;
+
+    int arr[n]; // Khai báo mảng
+
+    cout << "Nhập các phần tử của mảng:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i]; // Nhập các phần tử
+    }
+
+    if (isArithmeticProgression(arr, n)) {
+        cout << "Mảng là cấp số cộng." << endl;
+    } else {
+        cout << "Mảng không phải là cấp số cộng." << endl;
+    }
+
+    return 0;
+}
