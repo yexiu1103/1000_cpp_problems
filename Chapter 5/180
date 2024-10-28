@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cmath> // Sử dụng hàm fabs cho trị tuyệt đối
+using namespace std;
+
+void lietKe(double arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] < fabs(arr[i + 1]) && arr[i]>arr[i-1]) {
+            cout << arr[i] << " ";
+        }
+    }
+}
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+    
+    if (n < 2) {
+        cout << "Mang phai co it nhat 2 gia tri." << endl;
+        return 0;
+    }
+
+    double arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Cac gia tri thoa dieu kien la: ";
+    lietKe(arr, n);
+
+    return 0;
+}
