@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+void lietKeBoBa(double arr[], int n) {
+    for (int i = 0; i < n; i++) { // i là chỉ số của a
+        for (int j = 0; j < n; j++) { // j là chỉ số của b
+            for (int k = 0; k < n; k++) { // k là chỉ số của c
+                if (i != j && i != k && j != k) { // Bảo đảm a, b, c là ba giá trị khác nhau
+                    if (arr[i] == arr[j] + arr[k]) { // Kiểm tra điều kiện a = b + c
+                        cout << "(" << arr[i] << ", " << arr[j] << ", " << arr[k] << ")" << endl;
+                    }
+                }
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    cout << "Nhap so luong phan tu trong mang: ";
+    cin >> n;
+
+    if (n < 3) {
+        cout << "Mang phai co it nhat 3 gia tri." << endl;
+        return 0;
+    }
+
+    double arr[n];
+    cout << "Nhap cac phan tu trong mang: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Cac bo ba thoa dieu kien la:" << endl;
+    lietKeBoBa(arr, n);
+
+    return 0;
+}
