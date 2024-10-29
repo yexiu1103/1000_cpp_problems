@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+void nhapMangGiamDan(double arr[], int &n) {
+    cout << "Nhap so luong phan tu: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Nhap phan tu thu " << i + 1 << ": ";
+        double x;
+        cin >> x;
+
+        // Tìm vị trí chèn giá trị x vào mảng để giữ thứ tự giảm dần
+        int j = i;
+        while (j > 0 && arr[j - 1] < x) {
+            arr[j] = arr[j - 1]; // Dịch phần tử sang phải
+            j--;
+        }
+        
+        // Chèn x vào đúng vị trí đã tìm được
+        arr[j] = x;
+    }
+}
+
+void xuatMang(double arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    double arr[100]; // Giả sử kích thước tối đa của mảng là 100
+    
+    nhapMangGiamDan(arr, n);
+    
+    cout << "Mang sau khi nhap va sap xep giam dan: ";
+    xuatMang(arr, n);
+
+    return 0;
+}
