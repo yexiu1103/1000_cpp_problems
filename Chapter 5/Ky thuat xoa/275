@@ -1,0 +1,45 @@
+/******************************************************************************
+Xoa phan tu am trong mang
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool kiemTraSoChinhPhuong(int n) {
+    if (n < 0) return false;  // Số âm không thể là số chính phương
+    int sqrt_n = static_cast<int>(sqrt(n)); // Lấy căn bậc hai của n và chuyển thành số nguyên
+    return (sqrt_n * sqrt_n == n); // Kiểm tra nếu bình phương của sqrt_n bằng n
+}
+
+void xoaPhanTuChinhPhuong(double arr[], int &n){
+    for(int i=0; i<n; i++){
+        if(kiemTraSoChinhPhuong(arr[i])){
+            for(int j=i; j<n-1; j++){
+        arr[j]=arr[j+1];
+        }
+        n--; 
+        i--;
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    double arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    
+    xoaPhanTuChinhPhuong(arr, n);
+    
+    cout << "Mang sau khi xoa phan tu chinh phuong: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
