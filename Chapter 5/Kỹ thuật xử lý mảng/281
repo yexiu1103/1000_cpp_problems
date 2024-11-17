@@ -1,0 +1,54 @@
+/*Note: So chan phai loai so 0 
+*/
+
+#include <iostream>
+using namespace std;
+
+void sapXep(int arr[], int n){
+    int soChan = 0;
+    int so0 = 0;
+    int soLe = 0;
+    
+    int temp[n];
+    for(int i=0; i<n; i++){
+        if(arr[i]%2 == 0 && arr[i]!=0){
+            temp[soChan++]=arr[i];
+        }
+    }
+    so0 = soChan;
+    for(int i=0; i<n; i++){
+        if(arr[i]==0){
+            temp[so0++]=arr[i];
+        }
+    }
+    
+    soLe=so0;
+    for(int i=0; i<n; i++){
+        if(arr[i]%2!=0){
+            temp[soLe++]=arr[i];
+        }
+    }
+    
+    
+    for(int i=0; i<n; i++){
+        arr[i]=temp[i];
+    }
+    
+}
+
+int main(){
+    int n;
+    cin >> n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    
+    sapXep(arr, n);
+    for(int i=0; i<n; i++){
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}
