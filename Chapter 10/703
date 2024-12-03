@@ -1,0 +1,18 @@
+
+#include <iostream>
+int tinhTich(int n){
+    if(n==0){
+    return 1;}
+
+    return n* tinhTich(n-1);
+    }
+int main()
+{
+    int n;
+    std::cin >> n;
+    int tich;
+    tich = tinhTich(n);
+    std::cout << tich;
+
+    return 0;
+}
