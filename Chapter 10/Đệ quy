@@ -1,1 +1,18 @@
 
+#include <iostream>
+int tinhTong(int n){
+    if(n==1){
+    return n;}
+
+    return n+ tinhTong(n-1);
+    }
+int main()
+{
+    int n;
+    std::cin >> n;
+    int tong;
+    tong = tinhTong(n);
+    std::cout << tong;
+
+    return 0;
+}
