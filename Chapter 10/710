@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Hàm đệ quy tính giai thừa
+double factorial(int n) {
+    if (n == 0 || n == 1) { // Trường hợp cơ sở
+        return 1;
+    }
+    return n * factorial(n - 1); // Gọi đệ quy
+}
+
+// Hàm đệ quy tính tổng S(x, n) = x^n / n!
+double sum(int x, int n) {
+    if (n == 0) { // Trường hợp cơ sở
+        return 1; // Vì S(x, 0) = 1
+    }
+    return sum(x, n - 1) + (pow(x, n) / factorial(n)); // Gọi đệ quy
+}
+
+int main() {
+    int n, x;
+    cout << "Nhap n: ";
+    cin >> n;
+    cout << "Nhap x: ";
+    cin >> x;
+
+    cout << "Tong S(" << x << ", " << n << ") = " << sum(x, n) << endl;
+
+    return 0;
+}
