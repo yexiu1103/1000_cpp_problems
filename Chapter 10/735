@@ -1,0 +1,18 @@
+
+#include <iostream>
+using namespace std;
+
+ double deQuy(int n){
+    if(n==0){
+        return 1.0;
+    }
+    return 1.0/n*x*(n+1)+deQuy(n-1);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout << deQuy(n);
+
+    return 0;
+}
