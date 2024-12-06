@@ -1,0 +1,18 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+double deQuy(int n){
+    if(n==0){
+        return 0;
+    }
+    return n%10+deQuy(n/10);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout << deQuy(n);
+
+    return 0;
+}
