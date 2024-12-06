@@ -1,0 +1,22 @@
+//Tinh tich cac chu so le
+#include <iostream>
+#include <cmath>
+using namespace std;
+double deQuy(int n){
+    if(n==0){
+        return 1;
+    }
+    if(n%10%2!=0){
+        return (n%10)*deQuy(n/10);
+    }
+    return deQuy(n/10);
+} 
+int main()
+{
+    int n;
+    cin>>n;
+    cout << deQuy(n);
+
+    return 0;
+}
+/* If we change line 7 to return 0, the output will be 0 no matter the input. If you enter 2 for line 7, the output will always be twice the correct result.
