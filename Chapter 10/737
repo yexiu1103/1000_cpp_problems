@@ -2,7 +2,10 @@
 using namespace std;
 
  double deQuy(int n){
-    return (2n)/(2n+1)+deQuy(n-1);
+ if (n==0){
+    return 0;
+}
+    return (2*n)/(2n+1)+deQuy(n-1);
 }
 int main()
 {
