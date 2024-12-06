@@ -1,0 +1,28 @@
+//Cho mang mot chieu cac so nguyen.
+//Dem so dai luong duong trong mang
+#include <iostream>
+#include <cmath>
+using namespace std;
+double demSoDuong(int arr[], int n){
+    if(n==0){
+        return 0;
+    }
+    if(arr[n-1]>0){
+        return 1+demSoDuong(arr, n-1);
+    }
+    return demSoDuong(arr, n-1);
+}
+
+int main(){
+    int n;
+    cin >> n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    cout << demSoDuong(arr, n);
+    
+    return 0;
+    
+}
