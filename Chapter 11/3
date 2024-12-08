@@ -1,0 +1,17 @@
+/******************************************************************************
+
+Take input in variable and display same value by pointer.
+
+*******************************************************************************/
+#include <iostream>
+
+int main()
+{
+   int n;
+   std::cin >> n;
+   
+   int* a = &n;
+   std::cout << *a;
+   
+    return 0;
+}
